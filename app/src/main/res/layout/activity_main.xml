@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"
+        tools:context=".MainActivity">
+    <TextView
+            android:id="@+id/setColor"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="90dp"
+            android:background="@drawable/colour"
+    />
+
+    <TextView
+            android:id="@+id/txt_hex"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/setColor"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="@string/title"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:textSize="20dp"
+    />
+
+    <TextView
+            android:id="@+id/setHex"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/txt_hex"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/text_background"
+            android:text=" "
+            android:textSize="35dp"
+            android:gravity="center"
+            android:fontFamily="@font/ubuntu_bold"
+            android:textColor="#000000"
+    />
+
+    <TextView
+            android:id="@+id/txtRED"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="RED"
+            android:textColor="#FF0000"
+            android:textSize="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_below="@id/setHex"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+    />
+
+    <SeekBar
+            android:id="@+id/sbRed"
+            android:layout_width="250dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/setHex"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:progress="0"
+            android:max="255"
+            android:progressTint="#FF0000"
+            android:background="@drawable/seekbar_red"
+    />
+
+    <TextView
+            android:id="@+id/txtGREEN"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="GREEN"
+            android:textColor="#00FF00"
+            android:textSize="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_below="@id/sbRed"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+    />
+
+    <SeekBar
+            android:id="@+id/sbGreen"
+            android:layout_width="250dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/sbRed"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:progress="0"
+            android:max="255"
+            android:progressTint="#00FF00"
+            android:background="@drawable/seekbar_green"
+    />
+
+    <TextView
+            android:id="@+id/txtBLUE"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="BLUE"
+            android:textColor="#0000FF"
+            android:textSize="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_below="@id/sbGreen"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+    />
+
+    <SeekBar
+            android:id="@+id/sbBlue"
+            android:layout_width="250dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/sbGreen"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:progress="0"
+            android:max="255"
+            android:progressTint="#0000FF"
+            android:background="@drawable/seekbar_blue"
+    />
+
+    <Button
+            android:id="@+id/btnClear"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/sbBlue"
+            android:layout_marginTop="60dp"
+            android:text="CLEAR"
+            android:textColor="#000000"
+            android:fontFamily="@font/ubuntu_bold"
+            android:textSize="25dp"
+            android:background="@drawable/custom_clear"
+            />
+
+</RelativeLayout>
