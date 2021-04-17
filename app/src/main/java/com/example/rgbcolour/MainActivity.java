@@ -12,14 +12,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.content.ContextCompat;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
 
 public class MainActivity extends AppCompatActivity
 {
 
     SeekBar sbRed, sbGreen, sbBlue;
-    TextView setColor;
-    TextView setHex;
+    TextView setColor, setHex, lblRed, lblGreen, lblBlue;
 
     int cRed, cGreen, cBlue;
     String hex;
@@ -41,6 +41,10 @@ public class MainActivity extends AppCompatActivity
 
         btnClear = findViewById(R.id.btnClear);
 
+        lblRed = findViewById(R.id.txtRED);
+        lblGreen = findViewById(R.id.txtGREEN);
+        lblBlue = findViewById(R.id.txtBLUE);
+
 
         sbRed.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -48,6 +52,8 @@ public class MainActivity extends AppCompatActivity
             {
                 Log.e("values", "RED: " + progress);
                 cRed = progress;
+                lblRed.setText("RED: " + progress);
+
             }
 
             @Override
@@ -63,6 +69,7 @@ public class MainActivity extends AppCompatActivity
             {
                 Log.e("values", "GREEN: " + progress);
                 cGreen = progress;
+                lblGreen.setText("GREEN: " + progress);
             }
 
             @Override
@@ -78,6 +85,7 @@ public class MainActivity extends AppCompatActivity
             {
                 Log.e("values", "BLUE: " + progress);
                 cBlue = progress;
+                lblBlue.setText("BLUE: " + progress);
             }
 
             @Override
@@ -100,8 +108,9 @@ public class MainActivity extends AppCompatActivity
         sbRed.setProgress(0);
         sbGreen.setProgress(0);
         sbBlue.setProgress(0);
-        setHex.setText(" ");
-        setColor.getBackground().setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP);
+        setHex.setText("#000000");
+        setColor.getBackground().setColorFilter(Color.BLACK, PorterDuff.Mode.SRC_ATOP);
+        setColor.getBackground().setColorFilter(Color.parseColor("#808080"), PorterDuff.Mode.OVERLAY);
     }
 
     public void seeColor(int cRed, int cGreen, int cBlue)
@@ -112,6 +121,7 @@ public class MainActivity extends AppCompatActivity
         TextView setHex = findViewById(R.id.setHex);
         TextView setColor = findViewById(R.id.setColor);
         setColor.getBackground().setColorFilter(Color.parseColor(hex), PorterDuff.Mode.SRC_ATOP);
+
         setHex.setText(hex);
     }
 }

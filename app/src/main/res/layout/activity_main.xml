@@ -17,6 +17,14 @@
     />
 
     <TextView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="90dp"
+            android:background="@drawable/border"
+    />
+
+    <TextView
             android:id="@+id/txt_hex"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
@@ -36,7 +44,7 @@
             android:layout_below="@id/txt_hex"
             android:layout_centerHorizontal="true"
             android:background="@drawable/text_background"
-            android:text=" "
+            android:text="#000000"
             android:textSize="35dp"
             android:gravity="center"
             android:fontFamily="@font/ubuntu_bold"
@@ -47,13 +55,14 @@
             android:id="@+id/txtRED"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:text="RED"
+            android:text="RED: 0"
             android:textColor="#FF0000"
             android:textSize="20dp"
             android:layout_marginTop="30dp"
             android:layout_below="@id/setHex"
             android:layout_centerHorizontal="true"
             android:gravity="center"
+            android:fontFamily="@font/ubuntu_bold"
     />
 
     <SeekBar
@@ -63,23 +72,26 @@
             android:layout_below="@id/setHex"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="60dp"
-            android:progress="0"
             android:max="255"
+            android:maxHeight="5dp"
+            android:minHeight="5dp"
             android:progressTint="#FF0000"
-            android:background="@drawable/seekbar_red"
+            android:progressDrawable="@drawable/seekbar_red"
+            android:thumb="@drawable/seekbar_thumb_red"
     />
 
     <TextView
             android:id="@+id/txtGREEN"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:text="GREEN"
+            android:text="GREEN: 0"
             android:textColor="#00FF00"
             android:textSize="20dp"
             android:layout_marginTop="30dp"
             android:layout_below="@id/sbRed"
             android:layout_centerHorizontal="true"
             android:gravity="center"
+            android:fontFamily="@font/ubuntu_bold"
     />
 
     <SeekBar
@@ -89,23 +101,26 @@
             android:layout_below="@id/sbRed"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="60dp"
-            android:progress="0"
             android:max="255"
+            android:maxHeight="5dp"
+            android:minHeight="5dp"
             android:progressTint="#00FF00"
-            android:background="@drawable/seekbar_green"
+            android:progressDrawable="@drawable/seekbar_green"
+            android:thumb="@drawable/seekbar_thumb_green"
     />
 
     <TextView
             android:id="@+id/txtBLUE"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:text="BLUE"
+            android:text="BLUE: 0"
             android:textColor="#0000FF"
             android:textSize="20dp"
             android:layout_marginTop="30dp"
             android:layout_below="@id/sbGreen"
             android:layout_centerHorizontal="true"
             android:gravity="center"
+            android:fontFamily="@font/ubuntu_bold"
     />
 
     <SeekBar
@@ -115,10 +130,12 @@
             android:layout_below="@id/sbGreen"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="60dp"
-            android:progress="0"
             android:max="255"
+            android:maxHeight="5dp"
+            android:minHeight="5dp"
             android:progressTint="#0000FF"
-            android:background="@drawable/seekbar_blue"
+            android:progressDrawable="@drawable/seekbar_blue"
+            android:thumb="@drawable/seekbar_thumb_blue"
     />
 
     <Button
