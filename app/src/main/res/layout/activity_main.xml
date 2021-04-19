@@ -5,8 +5,43 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#000000"
+        android:background="#080808"
         tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/HEX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_margin="5dp"
+        android:text="HEX"
+        android:textSize="35dp"
+        android:textColor="#00FF00"
+        android:layout_toLeftOf="@id/sw_color"
+        />
+
+    <TextView
+            android:id="@+id/RGB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="5dp"
+            android:text="RGB"
+            android:textSize="35dp"
+            android:textColor="#00FF00"
+    />
+
+    <androidx.appcompat.widget.SwitchCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/RGB"
+            android:layout_marginTop="10dp"
+            app:track="@drawable/track"
+            android:thumb="@drawable/switch_thumb"
+            android:id="@+id/sw_color"
+    />
+
     <TextView
             android:id="@+id/setColor"
             android:layout_width="200dp"
@@ -37,7 +72,7 @@
             android:textSize="20dp"
     />
 
-    <TextView
+    <EditText
             android:id="@+id/setHex"
             android:layout_width="250dp"
             android:layout_height="50dp"
@@ -49,6 +84,21 @@
             android:gravity="center"
             android:fontFamily="@font/ubuntu_bold"
             android:textColor="#000000"
+            android:enabled="false"
+    />
+
+    <Button
+            android:id="@+id/btnEnter"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/setHex"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="CHECK"
+            android:textSize="25dp"
+            android:gravity="center"
+            android:fontFamily="@font/ubuntu_bold"
+            android:background="@drawable/custom_enter"
     />
 
     <TextView
@@ -59,7 +109,7 @@
             android:textColor="#FF0000"
             android:textSize="20dp"
             android:layout_marginTop="30dp"
-            android:layout_below="@id/setHex"
+            android:layout_below="@id/btnEnter"
             android:layout_centerHorizontal="true"
             android:gravity="center"
             android:fontFamily="@font/ubuntu_bold"
@@ -67,11 +117,10 @@
 
     <SeekBar
             android:id="@+id/sbRed"
-            android:layout_width="250dp"
+            android:layout_width="350dp"
             android:layout_height="30dp"
-            android:layout_below="@id/setHex"
+            android:layout_below="@id/txtRED"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="60dp"
             android:max="255"
             android:maxHeight="5dp"
             android:minHeight="5dp"
@@ -96,11 +145,10 @@
 
     <SeekBar
             android:id="@+id/sbGreen"
-            android:layout_width="250dp"
+            android:layout_width="350dp"
             android:layout_height="30dp"
-            android:layout_below="@id/sbRed"
+            android:layout_below="@id/txtGREEN"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="60dp"
             android:max="255"
             android:maxHeight="5dp"
             android:minHeight="5dp"
@@ -125,11 +173,10 @@
 
     <SeekBar
             android:id="@+id/sbBlue"
-            android:layout_width="250dp"
+            android:layout_width="350dp"
             android:layout_height="30dp"
-            android:layout_below="@id/sbGreen"
+            android:layout_below="@id/txtBLUE"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="60dp"
             android:max="255"
             android:maxHeight="5dp"
             android:minHeight="5dp"
@@ -143,8 +190,8 @@
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/sbBlue"
-            android:layout_marginTop="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="60dp"
             android:text="CLEAR"
             android:textColor="#000000"
             android:fontFamily="@font/ubuntu_bold"
