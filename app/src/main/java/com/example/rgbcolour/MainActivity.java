@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.appcompat.widget.SwitchCompat;
 
-import java.util.Arrays;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -31,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        navigationBar();
 
         sbRed = findViewById(R.id.sbRed);
         sbGreen = findViewById(R.id.sbGreen);
@@ -143,12 +143,18 @@ public class MainActivity extends AppCompatActivity {
                     sbGreen.setEnabled(false);
                     sbBlue.setEnabled(false);
                     setHex.setEnabled(true);
+                    sbRed.setProgress(0);
+                    sbGreen.setProgress(0);
+                    sbBlue.setProgress(0);
                     setHex.getText().clear();
                     setHex.setHint("HEX CODE");
                     btnEnter.setEnabled(true);
                     btnEnter.setTextColor(Color.parseColor("#000000"));
                     btnEnter.setBackground(getDrawable(R.drawable.custom_enter_enabled));
+                    setColor.getBackground().setColorFilter(Color.BLACK, PorterDuff.Mode.SRC_ATOP);
+                    setColor.getBackground().setColorFilter(Color.parseColor("#808080"), PorterDuff.Mode.OVERLAY);
                     Toast.makeText(MainActivity.this, "TYPE HEX CODE FOR COLOURS", Toast.LENGTH_SHORT).show();
+                    navigationBar();
                 }
                 else {
                     sbRed.setEnabled(true);
@@ -163,7 +169,9 @@ public class MainActivity extends AppCompatActivity {
                     btnEnter.setEnabled(true);
                     btnEnter.setTextColor(Color.parseColor("#808080"));
                     btnEnter.setBackground(getDrawable(R.drawable.custom_enter_disabled));
-
+                    setColor.getBackground().setColorFilter(Color.BLACK, PorterDuff.Mode.SRC_ATOP);
+                    setColor.getBackground().setColorFilter(Color.parseColor("#808080"), PorterDuff.Mode.OVERLAY);
+                    navigationBar();
                 }
             }
         });
@@ -171,6 +179,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void clear() {
         setHex.getText().clear();
+        navigationBar();
         if(hex_rgb.isChecked())
         {
             sbRed.setProgress(0);
@@ -203,6 +212,7 @@ public class MainActivity extends AppCompatActivity {
         setColor.getBackground().setColorFilter(Color.parseColor(hex), PorterDuff.Mode.SRC_ATOP);
 
         setHex.setText(hex);
+        navigationBar();
     }
 
     public void getRGB(String hex_input)
@@ -212,5 +222,23 @@ public class MainActivity extends AppCompatActivity {
             Red = Integer.parseInt(upper_case_input.substring(1, 3), 16);
             Green = Integer.parseInt(upper_case_input.substring(3, 5), 16);
             Blue = Integer.parseInt(upper_case_input.substring(5, 7), 16);
+        navigationBar();
+    }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        navigationBar();
+    }
+
+    public void navigationBar() {
+        View decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_IMMERSIVE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN);
     }
 }
