@@ -79,7 +79,8 @@
             android:layout_below="@id/txt_hex"
             android:layout_centerHorizontal="true"
             android:background="@drawable/text_background"
-            android:text="#000000"
+            android:hint="#000000"
+            android:textColorHint="#808080"
             android:textSize="35dp"
             android:gravity="center"
             android:fontFamily="@font/ubuntu_bold"
@@ -98,7 +99,8 @@
             android:textSize="25dp"
             android:gravity="center"
             android:fontFamily="@font/ubuntu_bold"
-            android:background="@drawable/custom_enter"
+            android:background="@drawable/custom_enter_disabled"
+            android:enabled="false"
     />
 
     <TextView

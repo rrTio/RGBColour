@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"
+        tools:context=".Intro">
+
+    <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/main_icon"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="200dp"
+    />
+    <TextView
+            android:id="@+id/Title"
+            android:layout_width="350dp"
+            android:layout_height="80dp"
+            android:text="RGB COLOUR"
+            android:textColor="#FFFFFF"
+            android:textSize="50dp"
+            android:gravity="center"
+            android:fontFamily="@font/ubuntu_bold"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/imageView"
+    />
+    <TextView
+            android:id="@+id/Credits"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:text="CREATED BY: ROZS RAVEN TIO"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:fontFamily="@font/ubuntu_bold"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+    />
+
+</RelativeLayout>

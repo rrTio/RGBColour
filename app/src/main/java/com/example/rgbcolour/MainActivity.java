@@ -2,9 +2,11 @@ package com.example.rgbcolour;
 
 import android.graphics.Color;
 import android.graphics.PorterDuff;
+import android.os.Build;
 import android.util.Log;
 import android.view.View;
 import android.widget.*;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.appcompat.widget.SwitchCompat;
@@ -132,36 +134,50 @@ public class MainActivity extends AppCompatActivity {
         });
 
         hex_rgb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
+                if (isChecked)
+                {
                     sbRed.setEnabled(false);
                     sbGreen.setEnabled(false);
                     sbBlue.setEnabled(false);
                     setHex.setEnabled(true);
                     setHex.getText().clear();
                     setHex.setHint("HEX CODE");
-                    Toast.makeText(MainActivity.this, "DRAG FOR COLOURS", Toast.LENGTH_SHORT).show();
-
-                } else {
+                    btnEnter.setEnabled(true);
+                    btnEnter.setTextColor(Color.parseColor("#000000"));
+                    btnEnter.setBackground(getDrawable(R.drawable.custom_enter_enabled));
+                    Toast.makeText(MainActivity.this, "TYPE HEX CODE FOR COLOURS", Toast.LENGTH_SHORT).show();
+                }
+                else {
                     sbRed.setEnabled(true);
                     sbGreen.setEnabled(true);
                     sbBlue.setEnabled(true);
                     setHex.setEnabled(false);
+                    sbRed.setProgress(0);
+                    sbGreen.setProgress(0);
+                    sbBlue.setProgress(0);
                     setHex.setText("#000000");
-                    Toast.makeText(MainActivity.this, "TYPE HEX CODE FOR COLOURS", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "DRAG FOR COLOURS", Toast.LENGTH_SHORT).show();
+                    btnEnter.setEnabled(true);
+                    btnEnter.setTextColor(Color.parseColor("#808080"));
+                    btnEnter.setBackground(getDrawable(R.drawable.custom_enter_disabled));
+
                 }
             }
         });
     }
 
     public void clear() {
+        setHex.getText().clear();
         if(hex_rgb.isChecked())
         {
             sbRed.setProgress(0);
             sbGreen.setProgress(0);
             sbBlue.setProgress(0);
             setHex.setHint("HEX CODE");
+            setHex.getText().clear();
             setColor.getBackground().setColorFilter(Color.BLACK, PorterDuff.Mode.SRC_ATOP);
             setColor.getBackground().setColorFilter(Color.parseColor("#808080"), PorterDuff.Mode.OVERLAY);
         }
@@ -171,7 +187,8 @@ public class MainActivity extends AppCompatActivity {
             sbRed.setProgress(0);
             sbGreen.setProgress(0);
             sbBlue.setProgress(0);
-            setHex.setText("#000000");
+            setHex.setHint("#000000");
+            setHex.getText().clear();
             setColor.getBackground().setColorFilter(Color.BLACK, PorterDuff.Mode.SRC_ATOP);
             setColor.getBackground().setColorFilter(Color.parseColor("#808080"), PorterDuff.Mode.OVERLAY);
         }
