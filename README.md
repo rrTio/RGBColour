@@ -1,4 +1,4 @@
-#RGB COLOUR APP
+# RGB COLOUR APP
 <img src="https://github.com/rrTio/RGBColour/INTRO.jpg" width="324" height="702">
 A CUSTOM COLOUR GENERATOR
 # Screenshots
