@@ -6,6 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#080808"
+        android:id="@+id/mainLayout"
         tools:context=".MainActivity">
 
     <TextView
@@ -86,6 +87,7 @@
             android:fontFamily="@font/ubuntu_bold"
             android:textColor="#000000"
             android:enabled="false"
+            android:maxLength="7"
     />
 
     <Button
