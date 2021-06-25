@@ -9,6 +9,11 @@ A CUSTOM COLOUR GENERATOR
 <img src="https://github.com/rrTio/RGBColour/blob/master/SAMPLE_D.jpg" width="324" height="702">
 
 # Changelog
+
+### v1.1
+- UPDATED SEEKBAR FUNCTION
+- UPDATED COLOUR CHANGING FUNCTION
+
 ### v1.0
 - INITIAL RELEASE
 
