@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("values", "RED: " + progress);
                 cRed = progress;
                 lblRed.setText("RED: " + progress);
+                seeColor(cRed, cGreen, cBlue);
             }
 
             @Override
@@ -65,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("values", "GREEN: " + progress);
                 cGreen = progress;
                 lblGreen.setText("GREEN: " + progress);
+                seeColor(cRed, cGreen, cBlue);
             }
 
             @Override
@@ -82,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("values", "BLUE: " + progress);
                 cBlue = progress;
                 lblBlue.setText("BLUE: " + progress);
+                seeColor(cRed, cGreen, cBlue);
             }
 
             @Override
